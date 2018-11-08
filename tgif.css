@@ -1,0 +1,130 @@
+body {
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding-bottom: 70px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f8f8;
+} 
+
+/*
+#position{
+    position:relative;
+}
+*/
+
+#senate-data, #most-engaged, #least-engaged, #glance-senate-data{
+/*    display:none;    */
+    visibility: hidden;
+}
+
+#loading, #loading1, #loading2, #loading3 {
+    position: absolute;
+    display:block;
+    width: 100%;
+}
+
+
+#FilterForm {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+
+}
+
+.filterbyParty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.filterbyState {
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+body,
+footer {
+    font-family: 'Shadows Into Light Two', cursive;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.affix ~ .container-fluid {
+    position: relative;
+    top: 50px;
+}
+
+td > a,
+a.x {
+    text-decoration: underline;
+}
+
+table,
+td,
+th {
+    text-align: center;
+}
+
+#logo {
+    max-width: 15%;
+    height: auto;
+}
+
+p {
+    text-indent: 2em;
+}
+
+.hideRow {
+    display: none;
+}
+
+.showRow {
+    display: table-row;
+}
+
+#statefilter {
+    margin-right: 10px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    margin-left: 10px;
+}
+
+button,
+select {
+    text-transform: none;
+    margin-bottom: 6px;
+    margin-top: -4px;
+}
