@@ -377,27 +377,27 @@ function addNumbers(bttmTen, tpTen, bttmTenLoy, tpTenLoy) {
     tr.appendChild(td);
 
     //generate table with the bottom and top ten data for senate attendance page    
-    if (location.pathname == "/tgif-senate-attendance.html") {
+    if (location.pathname == "/tgif/tgif-senate-attendance.html") {
         generateTenTable(bttmTen, "least-senate-data", "tot", "avg")
         generateTenTable(tpTen, "most-senate-data", "tot", "avg")
     }
 
 
     //generate table with the bottom and top ten data for senate loyalty page    
-    if (location.pathname == "/tgif-senate-loyalty.html") {
+    if (location.pathname == "/tgif/tgif-senate-loyalty.html") {
         generateTenTable(bttmTenLoy, "least-senate-data-loyalty", "tot_vot", "vot_pct")
         generateTenTable(tpTenLoy, "most-senate-data-loyalty", "tot_vot", "vot_pct")
     }
 
    //generate table with the bottom and top ten data for house attendance page   
-    if (location.pathname == "/tgif-house-attendance.html") {
+    if (location.pathname == "/tgif/tgif-house-attendance.html") {
         generateTenTable(bttmTen, "least-house-data", "tot", "avg")
         generateTenTable(tpTen, "most-house-data", "tot", "avg")
     }
 
 
    //generate table with the bottom and top ten data for house loyalty page
-    if (location.pathname == "/tgif-house-loyalty.html") {
+    if (location.pathname == "/tgif/tgif-house-loyalty.html") {
         generateTenTable(bttmTenLoy, "least-house-data-loyalty", "tot_vot", "vot_pct")
         generateTenTable(tpTenLoy, "most-house-data-loyalty", "tot_vot", "vot_pct")
     }
