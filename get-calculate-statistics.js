@@ -42,24 +42,37 @@ function getData() {
     }
     console.log(fetchUrl)
     
-    fetch(fetchUrl, {
-            headers: {
-                "X-API-Key": "Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV"
-            }
-        })
-        .then(function (response) {
-            response.json()
-                .then(function (data) {
-                    console.log(data)
-                    var members = data.results[0].members;
-                    numbers(members);                   tableRows(members);
-                    loading=false;
-                    showpage();
-                })
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
+    
+  fetch(fetchUrl, {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-API-Key': 'Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV'  
+       }
+
+    })
+    .then((response) => response.json())
+    .then((messages) => {console.log("messages");});
+
+    
+//    fetch(fetchUrl, {
+//            headers: {
+//                "X-API-Key": "Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV"
+//            }
+//        })
+//        .then(function (response) {
+//            response.json()
+//                .then(function (data) {
+//                    console.log(data)
+//                    var members = data.results[0].members;
+//                    numbers(members);                   tableRows(members);
+//                    loading=false;
+//                    showpage();
+//                })
+//        })
+//        .catch(function (error) {
+//            console.log(error)
+//        })
     
 
 
