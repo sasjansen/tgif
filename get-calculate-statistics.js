@@ -42,37 +42,37 @@ var fetchUrl=""
     console.log(fetchUrl)
     
     
-  fetch(fetchUrl, {
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-API-Key': 'Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV'  
-       }
-
-    })
-    .then(response => response.json())
+//  fetch(fetchUrl, {
+//      headers : { 
+//        'Content-Type': 'application/json',
+//        'Accept': 'application/json',
+//        'X-API-Key': 'Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV'  
+//       }
+//
+//    })
+//    .then(response => response.json())
 //    .then(response => response.text())
 //    .then(text => {console.log(text);});
 
     
-//    fetch(fetchUrl, {
-//            headers: {
-//                "X-API-Key": "Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV"
-//            }
-//        })
-//        .then(function (response) {
-//            response.json()
-//                .then(function (data) {
-//                    console.log(data)
-//                    var members = data.results[0].members;
-//                    numbers(members);                   tableRows(members);
-//                    loading=false;
-//                    showpage();
-//                })
-//        })
-//        .catch(function (error) {
-//            console.log(error)
-//        })
+    fetch(fetchUrl, {
+            headers: {
+                "X-API-Key": "Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV"
+            }
+        })
+        .then(function (response) {
+            response.json()
+                .then(function (data) {
+                    console.log(data)
+                    var members = data.results[0].members;
+                    numbers(members);                   tableRows(members);
+                    loading=false;
+                    showpage();
+                })
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
     
 
 
