@@ -33,10 +33,10 @@ console.log(1);
 function getData() {
 var fetchUrl=""
 
-    if (location.pathname == "/tgif-senate-loyalty.html"||location.pathname == "/tgif-senate-members.html"||location.pathname == "/tgif-senate-attendance.html") {
+    if (location.pathname == "/tgif/tgif-senate-loyalty.html"||location.pathname == "/tgif/tgif-senate-members.html"||location.pathname == "/tgif/tgif-senate-attendance.html") {
         fetchUrl = "https://api.propublica.org/congress/v1/113/senate/members.json"
     }    
-    else if(location.pathname == "/tgif-house-loyalty.html"||location.pathname == "/tgif-house-members.html"||location.pathname == "/tgif-house-attendance.html"){
+    else if(location.pathname == "/tgif/tgif-house-loyalty.html"||location.pathname == "/tgif/tgif-house-members.html"||location.pathname == "/tgif/tgif-house-attendance.html"){
         fetchUrl = 'https://api.propublica.org/congress/v1/113/house/members.json'
     }
     console.log(fetchUrl)
