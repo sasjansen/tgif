@@ -29,9 +29,9 @@ var loading=true;
 //showpage();
 console.log(1);
 
-var fetchUrl=""
 
 function getData() {
+var fetchUrl=""
 
     if (location.pathname == "/tgif-senate-loyalty.html"||location.pathname == "/tgif-senate-members.html"||location.pathname == "/tgif-senate-attendance.html") {
         fetchUrl = "https://api.propublica.org/congress/v1/113/senate/members.json"
