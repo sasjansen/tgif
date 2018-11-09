@@ -1,7 +1,7 @@
 //https://datatables.net/examples/api/add_row.html
 
 
-//http://localhost:8000./tgif-house-attendance.html
+//http://localhost:8000/tgif-house-attendance.html
 
 var obj = {
     number_democrats: 0,
@@ -29,10 +29,20 @@ var loading=true;
 //showpage();
 console.log(1);
 
-if (location.pathname == "./tgif-senate-loyalty.html"||location.pathname == "./tgif-senate-members.html"||location.pathname == "./tgif-senate-attendance.html") {
-    
+var fetchUrl=""
+
 function getData() {
-    fetch("https://api.propublica.org/congress/v1/113/senate/members.json", {
+
+    if (location.pathname == "/tgif-senate-loyalty.html"||location.pathname == "/tgif-senate-members.html"||location.pathname == "/tgif-senate-attendance.html") {
+        fetchUrl = "https://api.propublica.org/congress/v1/113/senate/members.json"
+    }    
+    else if(location.pathname == "/tgif-house-loyalty.html"||location.pathname == "/tgif-house-members.html"||location.pathname == "/tgif-house-attendance.html"){
+        fetchUrl = "https://api.propublica.org/congress/v1/113/house/members.json"
+        
+    }
+    console.log(fetchUrl)
+    
+    fetch(fetchUrl, {
             headers: {
                 "X-API-Key": "Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV"
             }
@@ -50,33 +60,33 @@ function getData() {
         .catch(function (error) {
             console.log(error)
         })
-    }
-}
-
-if (location.pathname == "./tgif-house-loyalty.html"||location.pathname == "./tgif-house-members.html"||location.pathname == "./tgif-house-attendance.html") {
     
-function getData() {
-    fetch("https://api.propublica.org/congress/v1/113/house/members.json", {
-            headers: {
-                "X-API-Key": "Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV"
-            }
-        })
-        .then(function (response) {
-            response.json()
-                .then(function (data) {
-                    console.log(data)
-                    var members = data.results[0].members;
-                    numbers(members);                   tableRows(members);
-                    loading=false;
-                    showpage();                
-                })
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-    }
-}
 
+
+//if (location.pathname == "/tgif-house-loyalty.html"||location.pathname == "/tgif-house-members.html"||location.pathname == "/tgif-house-attendance.html") {
+//    
+//    fetch("https://api.propublica.org/congress/v1/113/house/members.json", {
+//            headers: {
+//                "X-API-Key": "Rggdcuhk6HwO2DZT9CDauLtmQCW9EBoPefjutMkV"
+//            }
+//        })
+//        .then(function (response) {
+//            response.json()
+//                .then(function (data) {
+//                    console.log(data)
+//                    var members = data.results[0].members;
+//                    numbers(members);                   tableRows(members);
+//                    loading=false;
+//                    showpage();                
+//                })
+//        })
+//        .catch(function (error) {
+//            console.log(error)
+//        })
+//    }
+    
+    
+}
 console.log(3);
 
 getData()
@@ -354,27 +364,27 @@ function addNumbers(bttmTen, tpTen, bttmTenLoy, tpTenLoy) {
     tr.appendChild(td);
 
     //generate table with the bottom and top ten data for senate attendance page    
-    if (location.pathname == "./tgif-senate-attendance.html") {
+    if (location.pathname == "/tgif-senate-attendance.html") {
         generateTenTable(bttmTen, "least-senate-data", "tot", "avg")
         generateTenTable(tpTen, "most-senate-data", "tot", "avg")
     }
 
 
     //generate table with the bottom and top ten data for senate loyalty page    
-    if (location.pathname == "./tgif-senate-loyalty.html") {
+    if (location.pathname == "/tgif-senate-loyalty.html") {
         generateTenTable(bttmTenLoy, "least-senate-data-loyalty", "tot_vot", "vot_pct")
         generateTenTable(tpTenLoy, "most-senate-data-loyalty", "tot_vot", "vot_pct")
     }
 
-    //generate table with the bottom and top ten data for house attendance page   
-    if (location.pathname == "./tgif-house-attendance.html") {
+   //generate table with the bottom and top ten data for house attendance page   
+    if (location.pathname == "/tgif-house-attendance.html") {
         generateTenTable(bttmTen, "least-house-data", "tot", "avg")
         generateTenTable(tpTen, "most-house-data", "tot", "avg")
     }
 
 
-    //generate table with the bottom and top ten data for house loyalty page
-    if (location.pathname == "./tgif-house-loyalty.html") {
+   //generate table with the bottom and top ten data for house loyalty page
+    if (location.pathname == "/tgif-house-loyalty.html") {
         generateTenTable(bttmTenLoy, "least-house-data-loyalty", "tot_vot", "vot_pct")
         generateTenTable(tpTenLoy, "most-house-data-loyalty", "tot_vot", "vot_pct")
     }
