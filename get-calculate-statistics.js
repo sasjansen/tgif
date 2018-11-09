@@ -37,8 +37,7 @@ function getData() {
         fetchUrl = "https://api.propublica.org/congress/v1/113/senate/members.json"
     }    
     else if(location.pathname == "/tgif-house-loyalty.html"||location.pathname == "/tgif-house-members.html"||location.pathname == "/tgif-house-attendance.html"){
-        fetchUrl = "https://api.propublica.org/congress/v1/113/house/members.json"
-        
+        fetchUrl = 'https://api.propublica.org/congress/v1/113/house/members.json'
     }
     console.log(fetchUrl)
     
@@ -51,8 +50,9 @@ function getData() {
        }
 
     })
-    .then((response) => response.json())
-    .then((messages) => {console.log("messages");});
+    .then(response => response.json())
+//    .then(response => response.text())
+//    .then(text => {console.log(text);});
 
     
 //    fetch(fetchUrl, {
